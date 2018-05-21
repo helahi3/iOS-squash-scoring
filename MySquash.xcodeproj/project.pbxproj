@@ -16,6 +16,8 @@
 		BB9EF5B920B27FE900E58A62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB9EF5B720B27FE900E58A62 /* LaunchScreen.storyboard */; };
 		BB9EF5C420B27FEA00E58A62 /* MySquashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EF5C320B27FEA00E58A62 /* MySquashTests.swift */; };
 		BB9EF5CF20B27FEA00E58A62 /* MySquashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EF5CE20B27FEA00E58A62 /* MySquashUITests.swift */; };
+		BB9EF5DE20B2813C00E58A62 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EF5DD20B2813C00E58A62 /* Player.swift */; };
+		BB9EF5E020B282CF00E58A62 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EF5DF20B282CF00E58A62 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		BB9EF5CA20B27FEA00E58A62 /* MySquashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySquashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB9EF5CE20B27FEA00E58A62 /* MySquashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySquashUITests.swift; sourceTree = "<group>"; };
 		BB9EF5D020B27FEA00E58A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB9EF5DD20B2813C00E58A62 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BB9EF5DF20B282CF00E58A62 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		BB9EF5A920B27FE100E58A62 /* MySquash */ = {
 			isa = PBXGroup;
 			children = (
+				BB9EF5DC20B280F900E58A62 /* Model */,
 				BB9EF5AA20B27FE100E58A62 /* AppDelegate.swift */,
 				BB9EF5AC20B27FE100E58A62 /* RootViewController.swift */,
 				BB9EF5AE20B27FE100E58A62 /* DataViewController.swift */,
@@ -129,6 +134,15 @@
 				BB9EF5D020B27FEA00E58A62 /* Info.plist */,
 			);
 			path = MySquashUITests;
+			sourceTree = "<group>";
+		};
+		BB9EF5DC20B280F900E58A62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB9EF5DD20B2813C00E58A62 /* Player.swift */,
+				BB9EF5DF20B282CF00E58A62 /* Game.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB9EF5AD20B27FE100E58A62 /* RootViewController.swift in Sources */,
+				BB9EF5E020B282CF00E58A62 /* Game.swift in Sources */,
 				BB9EF5B120B27FE100E58A62 /* ModelController.swift in Sources */,
 				BB9EF5AF20B27FE100E58A62 /* DataViewController.swift in Sources */,
+				BB9EF5DE20B2813C00E58A62 /* Player.swift in Sources */,
 				BB9EF5AB20B27FE100E58A62 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
