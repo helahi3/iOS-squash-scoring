@@ -12,17 +12,17 @@ class Game {
     
     let playerOne : Player
     let playerTwo : Player
-    var serverSide : Bool //true means Right, false means Left
+//    var serverSide : Bool //true means Right, false means Left
     
     //Constructor
-    init(p1: Player, p2: Player, serverSide: Bool){
+    init(p1: Player, p2: Player) { //}, serverSide: Bool){
         self.playerOne = p1
         self.playerTwo = p2
-        self.serverSide = serverSide
+  //      self.serverSide = serverSide
     }
     
     //Print the score
-    func score() -> String {
+    func getScore() -> String {
         return "\(playerOne.points) - \(playerTwo.points)"
     }
     
@@ -40,7 +40,7 @@ class Game {
     func point(player : Player) {
         player.point()
         if(!gameStatus()) { return }
-        self.serverSide = !serverSide
+//        self.serverSide = !serverSide
     }
     
     

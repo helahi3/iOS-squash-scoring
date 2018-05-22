@@ -24,5 +24,8 @@ class Player {
         self.points += 1
     }
     
+    func getName -> String (){
+        return self.name
+    }
     
 }
