@@ -30,7 +30,7 @@ class DataViewController: UIViewController {
         super.init(coder: aDecoder)
     }
 
-
+    //Loading the labels
     override func viewDidLoad() {
         super.viewDidLoad()
         self.p1Label.text = self.playerOne.getName()
@@ -57,7 +57,15 @@ class DataViewController: UIViewController {
     @IBAction func p2Point (sender: UIButton){
         game.point(player: playerTwo)
     }
+    
+    //Update score when anyone scores
+    @IBAction func updateScore (sender: UIButton){
+        self.score.text = game.getScore()
+    }
+    
+    
 
+    
 }
 
 /*
