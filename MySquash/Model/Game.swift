@@ -23,14 +23,14 @@ class Game {
     
     //Print the score
     func getScore() -> String {
-        return "\(playerOne.points) - \(playerTwo.points)"
+        return "\(playerOne.getPoints()) - \(playerTwo.getPoints())"
     }
     
     //Check to see if game is over
     //Player needs >=11 points and lead of at least 2 points to win
     func gameStatus() -> Bool {
-        let pointDiff = abs(playerOne.points - playerTwo.points)
-        if(pointDiff > 2 && (playerOne.points >= 11 || playerTwo.points >= 11) ){
+        let pointDiff = abs(playerOne.getPoints() - playerTwo.getPoints())
+        if(pointDiff > 2 && (playerOne.getPoints() >= 11 || playerTwo.getPoints() >= 11) ){
             print("Game Over")
             return false
         }

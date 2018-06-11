@@ -14,9 +14,11 @@ class DataViewController: UIViewController {
     let playerOne: Player
     let playerTwo: Player
     let game : Game
-    @IBOutlet weak var p1Label : UILabel!
-    @IBOutlet weak var p2Label : UILabel!
-    @IBOutlet weak var score : UILabel!
+    @IBOutlet weak var p1Label : UILabel?
+    @IBOutlet weak var p2Label : UILabel?
+    @IBOutlet weak var score : UILabel?
+    
+    var scores = [String]()
     
     @IBOutlet weak var dataLabel: UILabel!
     var dataObject: String = ""
@@ -33,9 +35,9 @@ class DataViewController: UIViewController {
     //Loading the labels
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.p1Label.text = self.playerOne.getName()
-        self.p2Label.text = self.playerTwo.getName()
-        self.score.text = game.getScore()
+        self.p1Label?.text = "p1"//self.playerOne.getName()
+        self.p2Label?.text = "p2"//self.playerTwo.getName()
+        self.score?.text = game.getScore()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +62,7 @@ class DataViewController: UIViewController {
     
     //Update score when anyone scores
     @IBAction func updateScore (sender: UIButton){
-        self.score.text = game.getScore()
+        self.score?.text = game.getScore()
     }
     
     
