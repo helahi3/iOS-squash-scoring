@@ -21,17 +21,23 @@ class Game {
   //      self.serverSide = serverSide
     }
     
-    //Print the score
+    //Return the score in string
     func getScore() -> String {
         return "\(playerOne.getPoints()) - \(playerTwo.getPoints())"
     }
+    
+    //Return individual player score as a string
+    func getPlayerScore(player : Player) -> String {
+        return String(player.getPoints())
+    }
+    
+    
     
     //Check to see if game is over
     //Player needs >=11 points and lead of at least 2 points to win
     func gameStatus() -> Bool {
         let pointDiff = abs(playerOne.getPoints() - playerTwo.getPoints())
         if(pointDiff > 2 && (playerOne.getPoints() >= 11 || playerTwo.getPoints() >= 11) ){
-            print("Game Over")
             return false
         }
         return true
