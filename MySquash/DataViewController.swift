@@ -13,13 +13,19 @@ class DataViewController: UIViewController {
     //Instances of both players and the game
     let playerOne: Player
     let playerTwo: Player
-    let game : Game
+    
+    var game : Game
+    
+    let match : Match
+    
     @IBOutlet weak var p1Label : UILabel?
     @IBOutlet weak var p2Label : UILabel?
     @IBOutlet weak var score : UILabel?
    
     @IBOutlet weak var p1score : UILabel?
     @IBOutlet weak var p2score : UILabel?
+    
+    @IBOutlet weak var matchScore : UILabel?
     
     @IBOutlet var scores = [String]()
     
@@ -30,7 +36,8 @@ class DataViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         self.playerOne = Player(name: "P1",serving: false)
         self.playerTwo = Player(name: "P2",serving: false)
-        self.game = Game(p1: playerOne, p2: playerTwo)
+        self.match = Match(p1: playerOne, p2: playerTwo)
+        self.game = match.getCurrentGame()
         
         super.init(coder: aDecoder)
     }
@@ -73,10 +80,17 @@ class DataViewController: UIViewController {
         self.score?.text = game.getScore()
         self.p1score?.text = self.game.getPlayerScore(player: playerOne)
         self.p2score?.text = self.game.getPlayerScore(player: playerTwo)
-
+        
+        if(match.refreshGame()){
+            game = match.getCurrentGame()
+            
+        }
     }
     
-    
+
+    @IBAction func updateMatchScore (sender: UIButton){
+        self.matchScore?.text = match.getMatchScore()
+    }
     
 
     
