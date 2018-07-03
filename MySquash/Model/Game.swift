@@ -18,7 +18,7 @@ class Game {
     init(p1: Player, p2: Player) { //}, serverSide: Bool){
         self.playerOne = p1
         self.playerTwo = p2
-  //      self.serverSide = serverSide
+        //TODO:      self.serverSide = serverSide
     }
     
     //Return the score in string

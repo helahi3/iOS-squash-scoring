@@ -18,6 +18,7 @@
 		BB9EF5CF20B27FEA00E58A62 /* MySquashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EF5CE20B27FEA00E58A62 /* MySquashUITests.swift */; };
 		BB9EF5DE20B2813C00E58A62 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EF5DD20B2813C00E58A62 /* Player.swift */; };
 		BB9EF5E020B282CF00E58A62 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EF5DF20B282CF00E58A62 /* Game.swift */; };
+		BBE0805320EB5AE100BFA8B6 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE0805220EB5AE100BFA8B6 /* Match.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		BB9EF5D020B27FEA00E58A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB9EF5DD20B2813C00E58A62 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BB9EF5DF20B282CF00E58A62 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		BBE0805220EB5AE100BFA8B6 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				BB9EF5DD20B2813C00E58A62 /* Player.swift */,
 				BB9EF5DF20B282CF00E58A62 /* Game.swift */,
+				BBE0805220EB5AE100BFA8B6 /* Match.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				BB9EF5AF20B27FE100E58A62 /* DataViewController.swift in Sources */,
 				BB9EF5DE20B2813C00E58A62 /* Player.swift in Sources */,
 				BB9EF5AB20B27FE100E58A62 /* AppDelegate.swift in Sources */,
+				BBE0805320EB5AE100BFA8B6 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
