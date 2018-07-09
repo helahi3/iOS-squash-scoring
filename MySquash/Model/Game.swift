@@ -14,12 +14,14 @@ class Game {
     let playerTwo : Player
 //    var serverSide : Bool //true means Right, false means Left
     var winner : Player
+    let gameNumber : Int
     
     //Constructor
-    init(p1: Player, p2: Player) { //}, serverSide: Bool){
+    init(p1: Player, p2: Player, num: Int) { //}, serverSide: Bool){
         self.playerOne = p1
         self.playerTwo = p2
         self.winner = p1 //temp fix
+        self.gameNumber = num
         //TODO:      self.serverSide = serverSide
     }
     
@@ -40,7 +42,7 @@ class Game {
     //False means game over
     func gameStatus() -> Bool {
         let pointDiff = abs(playerOne.getPoints() - playerTwo.getPoints())
-        if(pointDiff > 2){
+        if(pointDiff >= 2){
             if(playerOne.getPoints() >= 11){
                 winner = playerOne
                 playerOne.game()
@@ -55,9 +57,10 @@ class Game {
         return true
     }
     
+    
     func point(player : Player) {
         player.point()
-        if(!gameStatus()) { return }
+//        if(!gameStatus()) { return }
 //        self.serverSide = !serverSide
     }
     

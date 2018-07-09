@@ -18,9 +18,22 @@
                     <view key="view" contentMode="scaleToFill" id="502-Ir-ELC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHm-1b-NrS">
+                                <rect key="frame" x="164" y="380" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="S4R-Ja-viH" kind="show" id="kXW-Ga-AYM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="iAZ-4m-2z3"/>
                     </view>
+                    <connections>
+                        <outlet property="view" destination="502-Ir-ELC" id="MFL-gr-pGj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,6 +69,7 @@
                                         <state key="normal" title="Won Rally"/>
                                         <connections>
                                             <action selector="p1PointWithSender:" destination="S4R-Ja-viH" eventType="touchDown" id="Roj-Hm-RzE"/>
+                                            <action selector="updateMatchScoreWithSender:" destination="S4R-Ja-viH" eventType="touchDown" id="y82-y7-L71"/>
                                             <action selector="updateScoreWithSender:" destination="S4R-Ja-viH" eventType="touchDown" id="81A-GP-HL7"/>
                                         </connections>
                                     </button>
@@ -65,6 +79,7 @@
                                         <state key="normal" title="Won Rally"/>
                                         <connections>
                                             <action selector="p2PointWithSender:" destination="S4R-Ja-viH" eventType="touchDown" id="QNC-5a-deY"/>
+                                            <action selector="updateMatchScoreWithSender:" destination="S4R-Ja-viH" eventType="touchDown" id="Z78-Tz-Xog"/>
                                             <action selector="updateScoreWithSender:" destination="S4R-Ja-viH" eventType="touchDown" id="VVe-kb-HYj"/>
                                         </connections>
                                     </button>
@@ -96,13 +111,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWU-GZ-hvx">
-                                        <rect key="frame" x="132" y="8" width="57" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 - 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7G3-dz-O4u" userLabel="Match Score">
                                         <rect key="frame" x="118" y="37" width="84" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -110,9 +118,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWU-GZ-hvx">
+                                        <rect key="frame" x="132" y="8" width="76" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vYC-Rs-IS5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="New Game" id="gie-KR-aoA"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.97826086960000003" green="0.91848131079999995" blue="0.73914263440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -128,7 +150,8 @@
                     </view>
                     <connections>
                         <outlet property="dataLabel" destination="cF2-Le-7mQ" id="6Zq-Za-8QN"/>
-                        <outlet property="matchScore" destination="7G3-dz-O4u" id="1dQ-zU-dcb"/>
+                        <outlet property="gameNumberLabel" destination="nWU-GZ-hvx" id="12a-b6-yAu"/>
+                        <outlet property="matchScore" destination="7G3-dz-O4u" id="5ws-Vb-M0l"/>
                         <outlet property="p1score" destination="a8s-6T-wiJ" id="KzW-Hx-AtS"/>
                         <outlet property="p2score" destination="e6w-HP-ahL" id="4xT-fK-AKf"/>
                         <outlet property="score" destination="7yw-6e-nFV" id="X5L-aM-Zl4"/>
