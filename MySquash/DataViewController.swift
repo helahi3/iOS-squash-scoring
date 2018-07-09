@@ -98,9 +98,6 @@ class DataViewController: UIViewController {
     
     //Update match score at the end of each game
     @IBAction func updateMatchScore (sender: UIButton){
-//        self.score?.text = game.getScore()
-//        self.p1score?.text = self.game.getPlayerScore(player: playerOne)
-//        self.p2score?.text = self.game.getPlayerScore(player: playerTwo)
 
         self.matchScore?.text = match.getMatchScore()
         self.gameNumberLabel?.text = match.getGameNum()
